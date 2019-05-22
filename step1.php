@@ -131,7 +131,7 @@ if (isset($_SESSION['check']) == 1) {
             } else {
                 $modules = apache_get_modules();
                 if (in_array('mod_rewrite', $modules) === true) {
-                    $results[] = new TestResult("Apache 'mod_rewrite' não econtrado.", STATUS_OK);
+                    $results[] = new TestResult("Apache 'mod_rewrite' econtrado.", STATUS_OK);
 
                     return true;
                 } else {
@@ -151,7 +151,7 @@ if (isset($_SESSION['check']) == 1) {
         {
             $ok = true;
 
-            $required_extensions = ['mysqli', 'tokenizer', 'imap', 'curl', 'mcrypt', 'mbstring', 'openssl', 'fileinfo', 'zip'];
+            $required_extensions = ['mysqli', 'tokenizer', 'imap', 'curl', 'mcrypt', 'mbstring', 'openssl', 'fileinfo', 'zip', 'ldap'];
 
             foreach ($required_extensions as $required_extension) {
                 if (extension_loaded($required_extension)) {
